@@ -11,7 +11,7 @@ A simple game made using OOPJS conceps and html5 canvas.
 
 The Engine was provided by the Udacity team.
 
-### Fearture Updats
+### Feature Updates
 
 1. Gems for more points
 2. Multiplayer option
