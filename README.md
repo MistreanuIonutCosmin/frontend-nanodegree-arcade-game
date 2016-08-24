@@ -1,21 +1,26 @@
 # Frontend-nanodegree-arcade-game
 
-## Install
-
-1.  git clone
-2.  open index.html in the browser
-
 ## About
 
-A simple game made using OOPJS conceps and html5 canvas.
+A simple game made using OOPJS conceps and html5 canvas.   
+The Engine was provided by the Udacity team as part of the Front End Nanodegree program.
 
-The Engine was provided by the Udacity team.
+## Install
 
-### Feature Updates
+1.  Git clone
+2.  open index.html in the browser
+
+## How to play it
+
+Use the arrow key to move your character on the map.   
+The goal is to get in the water without being heat by bugs.   
+You get points every time you successfully pass and lose lives when hit by a bug.   
+After loosing 3 lives the game ends and the score table is updated.
+
+### Future updated 
 
 1. Gems for more points
 2. Multiplayer option
-
 
 
 For more details check this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).

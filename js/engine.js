@@ -103,10 +103,11 @@ var nrOfPlayedGames = 0;
 
     function checkCollisions() {
         allEnemies.forEach(function(enemy) {
-            enemy.collision(player);
+            if(enemy.collision(player)) { 
+                (player.lives > 1) ? player.reset(): endGame(player); 
+            }
         });
     }
-
 
     /* This function initially draws the "game level", it will then call
      * the renderEntities function. Remember, this function is called every
@@ -164,7 +165,7 @@ var nrOfPlayedGames = 0;
         });
 
         player.render();
-
+        score.render(player.score, player.lives);
     }
 
     /* Go ahead and load all of the images we know we're going to need to
@@ -203,7 +204,7 @@ function endGame(player) {
     ctx.clearRect(0, 0, 505, 50);
     ctx.textAlign = "left";
     ctx.font = "30px Arial";
-    ctx.fillText("Final Score: " + player.score, 0, 40);
+    ctx.fillText("Final Status: " + player.score, 0, 40);
 
     ctx.font = "56px Impact";
     ctx.textAlign = "center";
@@ -226,34 +227,4 @@ function endGame(player) {
     tr.cells[1].appendChild(document.createTextNode(player.score.toString()));
 
     pauseGame = true;
-}
-
-/*
- * Resetting the score, the speed of the enemy and restarting the game
- */
-function restart() {
-
-    ctx.clearRect(0, 0, 505, 50);
-    pauseGame = false;
-    initialiseObjects();
-    init();
-}
-
-/*
- * Pausing and resuming the game
- */
-function pause() {
-
-    var button = document.getElementById("pause");
-    
-    if (pauseGame) {
-        pauseGame = false;
-        button.innerHTML = "Pause";
-        main();
-
-    } else {
-        pauseGame = true;
-        button.innerHTML = "Resume";
-    }
-
 }
