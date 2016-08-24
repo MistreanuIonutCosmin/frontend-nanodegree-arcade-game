@@ -101,6 +101,10 @@ var nrOfPlayedGames = 0;
         player.update();
     }
 
+    /*
+    * If an enemy hit the player we check base on the number of lives
+    * he has if we reset or end the game.
+    */
     function checkCollisions() {
         allEnemies.forEach(function(enemy) {
             if(enemy.collision(player)) { 
